@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This head is used to load meta tags, Bootstrap GRID ONLY, and our styles -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classes - Eire Fitness</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- This nav is used to provide site-wide navigation with mobile toggle -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">Eire Fitness</a>
+      <button class="nav__btn" aria-label="Toggle menu" data-nav-toggle>&#9776;</button>
+      <ul class="nav__menu" data-nav-menu>
+        <li><a class="" href="index.html">Home</a></li>
+        <li><a class="" href="about.html">About</a></li>
+        <li><a class="is-active" href="classes.html">Classes</a></li>
+        <li><a class="" href="membership.html">Membership</a></li>
+        <li><a class="" href="contact.html">Contact</a></li>
+        <li><a class="btn" href="join.html">Join Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+  <!-- This section is used to show filters and a simple weekly schedule table -->
+  <section class="section section--light">
+    <div class="container">
+      <h1 class="center">Explore Our Classes</h1>
+
+      <!-- This toolbar is used to filter rows by category using JS -->
+      <div class="center mt16" data-filter-bar>
+        <button class="btn btn--ghost" data-filter="all">All</button>
+        <button class="btn btn--ghost" data-filter="hiit">HIIT</button>
+        <button class="btn btn--ghost" data-filter="yoga">Yoga</button>
+        <button class="btn btn--ghost" data-filter="spin">Spin</button>
+        <button class="btn btn--ghost" data-filter="strength">Strength</button>
+      </div>
+
+      <!-- This table is used to list classes during the week -->
+      <div class="mt24">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-class-row="yoga">
+              <td>09:00</td>
+              <td>Morning Yoga (Jane)</td><td></td><td>Morning Yoga (Jane)</td><td></td><td>Morning Yoga (Jane)</td>
+            </tr>
+            <tr data-class-row="hiit">
+              <td>10:00</td>
+              <td></td><td>HIIT Blast (Mike)</td><td></td><td>HIIT Blast (Mike)</td><td></td>
+            </tr>
+            <tr data-class-row="spin">
+              <td>17:00</td>
+              <td>Spin Cycle (Sarah)</td><td></td><td>Spin Cycle (Sarah)</td><td></td><td>Spin Cycle (Sarah)</td>
+            </tr>
+            <tr data-class-row="strength">
+              <td>18:00</td>
+              <td>Strength (John)</td><td></td><td>Strength (John)</td><td></td><td></td>
+            </tr>
+            <tr data-class-row="yoga">
+              <td>19:00</td>
+              <td></td><td>Power Yoga (Jane)</td><td></td><td>Power Yoga (Jane)</td><td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- This footer is used on every page -->
+  <footer class="footer">
+    <div class="container">
+      <p>Address: 123 Fitness St, Dublin, Ireland | Phone: (01) 234 5678</p>
+      <p>© 2025 Eire Fitness. All rights reserved.</p>
+    </div>
+  </footer>
+
+ 
+</body>
+</html>
 
