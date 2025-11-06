@@ -72,3 +72,14 @@ h1, h2, h3 {
   padding: 16px;
   margin-top: 40px;
 }
+/* ===  Keep footer at bottom on short pages === */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+footer.footer {
+  margin-top: auto;
+}
