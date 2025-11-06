@@ -1,241 +1,74 @@
 /* 
-  Eire Fitness -  Stylesheet 
-  This code is used to define the visual design for all pages in a consistent way.
-  - We use Bootstrap GRID ONLY (container/row/col-*) to stay under 30% framework usage.
-  - We set a site max-width of 1200px so the site does not stretch edge-to-edge.
-  - We keep a light grey background to make content readable.
+  Eire Fitness - Early Design Draft (Planning Stage)
+  This is the initial CSS plan showing brand colors, layout basics, and structure.
+  Final version will include detailed styles for forms, tables, and responsive design.
 */
 
-/*  1) Base tokens: colors, spacing, typography  — Shared (all)
-   This part sets the general look for the whole website: colors, font, text size, spacing, and shadows. */
+/* === 1) Base tokens: colors, spacing, typography === — Shared (all)
+   This section defines main colors and simple typography setup. */
 
-/*  2) Navigation  — Shared (all)
-   This part styles the top menu (logo, links, and mobile hamburger menu). */
-
-/* 3) Hero (static image) — Xabier
-   This part controls the big image banner on the homepage with text on top. */
-
-/* 4) Buttons — Shared (all)
-   This part makes all buttons look the same (shape, color, hover effect). */
-
-/*  5) Cards and utilities  — Kateryna
-   This part gives a box style to small content panels and adds spacing tools (like margin-top classes). */
-
-/*  6) Tables used on Classes page  — Kateryna
-   This part designs the schedule table on the Classes page (colors, borders, alignment). */
-
-/* 7) Pricing cards on Membership page  — Dawid
-   This part makes the price boxes on the Membership page look clean and aligned. */
-
-/*  8) Forms (Contact + Join)  — Dawid & Xabier
-   This part styles the form boxes, inputs, error messages, and buttons on Contact and Join pages. */
-
-/* 9) Footer  — Shared (all)
-   This part designs the green bottom area that shows address and copyright. */
-
-/* 10) Keep footer at bottom on short pages  — Dawid
-   This part makes sure the footer stays at the bottom of the screen even if a page has little content. */
-
-
-/* 1) Base tokens: colors, spacing, typography */
-:root {
-  /* This code is used to define theme variables for easy changes later */
-  --bg: #f3f5f7;            /* Light grey page background */
-  --panel: #ffffff;         /* White cards and panels */
-  --text: #1f2937;          /* Near-black text */
-  --muted: #6b7280;         /* Muted text */
-  --brand: #198754;         /* Brand green */
-  --brand-700: #146c43;     /* Darker green for hover/focus */
-  --border: #e5e7eb;        /* Subtle border */
-  --radius: 10px;           /* Rounded corners */
-  --shadow: 0 8px 20px rgba(0,0,0,0.06); /* Soft shadow */
-}
-
-/* This code is used to normalize base elements */
 * { box-sizing: border-box; }
-html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
+  font-family: system-ui, sans-serif;
+  background: #f3f5f7; /* light grey background */
+  color: #1f2937; /* near-black text */
   line-height: 1.6;
 }
-
-/* This code is used to keep the site at a readable width */
-.container {
-  max-width: 1200px; /* Center column width on large screens */
-}
-
-/* This code is used to create consistent spacing for sections */
-.section {
-  padding: 56px 0;
-}
-.section--light { background: var(--bg); }
-.section--panel { background: var(--panel); }
-
 h1, h2, h3 {
-  margin: 0 0 16px;
-  color: var(--brand);
-  line-height: 1.25;
+  color: #198754; /* brand green */
 }
-p { margin: 0 0 16px; color: var(--text); }
-.lead { font-size: 1.125rem; color: var(--muted); }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
-/*  2) Navigation  */
+/* === 2) Navigation === — Shared (all)
+   Simple header layout, mobile and sticky effects will be added later. */
 .nav {
-  /* This code is used to style the top navigation bar */
-  position: sticky; top: 0; z-index: 1000;
-  background: #111827;
+  background: #111827; /* dark grey */
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-.nav__inner {
-  /* This code is used to align logo and links */
-  height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav__brand {
-  /* This code is used to style the logo text */
-  color: #fff; text-decoration: none; font-weight: 700; font-size: 1.125rem;
-}
-.nav__menu {
-  /* This code is used to position the desktop menu */
-  display: flex; gap: 18px; align-items: center;
-  list-style: none; margin: 0; padding: 0;
+  padding: 10px 0;
 }
 .nav__menu a {
-  /* This code is used to style nav links */
-  color: #fff; text-decoration: none; padding: 8px 6px; border-bottom: 2px solid transparent;
-}
-.nav__menu a.is-active,
-.nav__menu a:hover { border-bottom-color: var(--brand); color: #d1fae5; }
-.nav__btn {
-  /* This code is used to display the hamburger on mobile only */
-  display: none; background: transparent; border: 0; color: #fff; font-size: 28px; cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
 }
 
-/* This code is used to create the mobile slide-over menu */
-@media (max-width: 991px) {
-  .nav__btn { display: block; }
-  .nav__menu {
-    position: fixed; inset: 64px 0 0 0; background: #111827;
-    transform: translateX(100%); transition: transform .25s ease;
-    flex-direction: column; padding: 24px 16px;
-  }
-  .nav__menu.is-open { transform: translateX(0); }
-  .nav__menu li { width: 100%; }
-  .nav__menu a { display: block; padding: 12px 6px; }
-}
-
-/*  3) Hero (static image)  */
+/* === 3) Hero (static image) === — Xabier
+   Basic hero block placeholder for homepage. */
 .hero {
-  /* This code is used to display a static banner image with readable overlay text */
-  position: relative; height: 56vh; min-height: 360px; background: #000; overflow: hidden;
-}
-.hero__img {
-  /* This code is used to cover the hero area with the image */
-  width: 100%; height: 100%; object-fit: cover; opacity: .65;
-}
-.hero__caption {
-  /* This code is used to show headline text over the image */
-  position: absolute; left: 6%; bottom: 12%;
-  background: rgba(0,0,0,.35); color: #fff; padding: 20px 24px;
-  max-width: 560px; border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.hero__title { margin: 0 0 8px; color: #fff; font-size: 2rem; }
-.hero__text { margin: 0 0 16px; color: #f9fafb; }
-
-/*  4) Buttons  */
-.btn {
-  /* This code is used for shared button styling */
-  display: inline-block; padding: 10px 16px; border-radius: 8px; border: 2px solid var(--brand);
-  background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; text-align: center;
-  transition: background .2s, border-color .2s;
-}
-.btn--ghost { background: transparent; color: var(--brand); }
-.btn:hover { background: var(--brand-700); border-color: var(--brand-700); }
-.btn--full { width: 100%; padding: 12px 18px; }
-
-/* 5) Cards and utilities  */
-.card {
-  /* This code is used to show content blocks as panels */
-  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px; box-shadow: var(--shadow); height: 100%; align-items: stretch;
-}
-.center { text-align: center; }
-.m0 { margin: 0; }
-.mt16 { margin-top: 16px; }
-.mt24 { margin-top: 24px; }
-.mt32 { margin-top: 32px; }
-
-/*  6) Tables used on Classes page */
-.table {
-  /* This code is used to style a simple schedule table */
-  width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
-}
-.table th, .table td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: center; }
-.table thead th { background: #111827; color: #fff; }
-.table tr:last-child td { border-bottom: 0; }
-.hidden { display: none !important; }
-
-/*  7) Pricing cards on Membership page  */
-.price {
-  /* This code is used to style the price number */
-  font-size: 2.25rem; font-weight: 800; color: var(--brand);
-}
-.badge {
-  /* This code is used to show a small badge */
-  display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 700;
-}
-
-/*  8) Forms (Contact + Join)  */
-.form {
-  /* This code is used to wrap forms in a panel */
-  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
-  padding: 20px;
-}
-.form fieldset { border: 0; margin: 0 0 16px; padding: 0; }
-.form legend { font-weight: 800; color: var(--brand); margin-bottom: 8px; }
-.form label { display: block; font-weight: 700; margin: 10px 0 6px; }
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="tel"],
-.form textarea {
-  /* This code is used to style text fields */
-  width: 100%; padding: 10px 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;
-  background: #fff;
-}
-.form textarea { resize: vertical; min-height: 120px; }
-
-/* This code is used to display error states during validation */
-.input--invalid { border-color: #dc3545 !important; background: #fff5f6; }
-.error { display: none; color: #dc3545; font-size: .95rem; margin-top: 6px; }
-.error.is-visible { display: block; }
-
-/* 9) Footer  */
-.footer {
-  /* This code is used to style the footer with better contrast */
-  background: #198754;       /* brand green background */
-  color: #ffffff;            /* white text for high contrast */
+  height: 300px;
+  background: #000;
+  color: #fff;
   text-align: center;
-  padding: 32px 0;
+  padding-top: 100px;
+}
+.hero h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* === 4) Buttons === — Shared (all)
+   Simple button design, hover and focus styles will come later. */
+.btn {
+  background: #198754;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+/* === 5) Footer === — Shared (all)
+   Basic footer with brand color. */
+.footer {
+  background: #198754;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
   margin-top: 40px;
-}
-.footer p {
-  margin: 4px 0;
-  font-size: 1rem;
-}
-/* === 10) Keep footer at bottom on short pages === */
-html, body {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-}
-footer.footer {
-  margin-top: auto;
 }
